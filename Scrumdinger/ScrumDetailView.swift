@@ -9,40 +9,66 @@ import SwiftUI
 
 struct ScrumDetailView: View {
     let scrum : DailyScrum
+    @State var showEditSheet:Bool = false
     var body: some View {
-        NavigationView {
-            List {
-                Section(header: Text("Meeting info")) {
-                    NavigationLink(destination: MeetingView()) {
-                        Label("Start meeting" , systemImage: "timer")
-                    }
-                    HStack {
-                        Label("Length" , systemImage: "clock")
-                        Spacer()
-                        Text("\(scrum.lengthInMinutes)")
-                    }
-                    HStack {
-                        Label("Theme" , systemImage: "paintpalette")
-                        Spacer()
-                        Text(scrum.theme.name
-                        )
-                        .padding(.horizontal)
-                        .background(scrum.theme
-                            .mainColor)
-                    }
+        List {
+            Section(header: Text("Meeting info")) {
+                NavigationLink(destination: MeetingView()) {
+                    Label("Start meeting" , systemImage: "timer")
                 }
-                Section(header: Text("Attendees")) {
-                    ForEach(scrum.attendees) {attendee in
-                        Label(attendee.name , systemImage: "person")
-                    }
-                    
+                HStack {
+                    Label("Length" , systemImage: "clock")
+                    Spacer()
+                    Text("\(scrum.lengthInMinutes)")
+                }
+                HStack {
+                    Label("Theme" , systemImage: "paintpalette")
+                    Spacer()
+                    Text(scrum.theme.name
+                    )
+                    .padding(.horizontal)
+                    .background(scrum.theme
+                        .mainColor)
                 }
             }
-            .navigationTitle(scrum.title)
-            .toolbar {
-                Button(action: {}){
-                    Text("Edit")
+            Section(header: Text("Attendees")) {
+                ForEach(scrum.attendees) {attendee in
+                    Label(attendee.name , systemImage: "person")
                 }
+                
+            }
+            
+        }
+        .navigationTitle(scrum.title)
+        .toolbar {
+            Button(action: {
+                showEditSheet = true
+            }){
+                Text("Edit")
+            }
+        }
+        .sheet(isPresented: $showEditSheet){
+            NavigationView {
+                
+                ScrumDetailEditView()
+                    .navigationTitle(scrum.title)
+                    .toolbar{
+                        ToolbarItem(placement: .cancellationAction) {
+                            Button(action: {
+                                showEditSheet = false
+                            }){
+                                Text("Cancel")
+                                
+                            }
+                        }
+                        ToolbarItem(placement:.confirmationAction) {
+                            Button(action: {
+                                showEditSheet = false
+                            }) {
+                                Text("Done")
+                            }
+                        }
+                    }
             }
         }
     }

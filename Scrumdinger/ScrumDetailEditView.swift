@@ -8,18 +8,37 @@
 import SwiftUI
 
 struct ScrumDetailEditView: View {
-    @State var title : String = ""
-    @State var lengthInMinutes:Double = 5
+    @State var data : DailyScrum.Data = DailyScrum.Data()
+    @State var newAttendee : String = ""
     var body: some View {
         Form {
             Section(header: Text("Meeting info")) {
-                TextField("Title" , text: $title)
-                Slider(value: $lengthInMinutes , in : 5...25, step: 1){
-                    Text("Duration")
+                TextField("Title" , text: $data.title)
+                HStack {
+                    Slider(value: $data.lengthInMinutes , in : 5...25, step: 1){
+                        Text("Duration")
+                    }
+                    Spacer()
+                    Text("\(Int(data.lengthInMinutes)) minutes")
                 }
             }
             Section(header: Text("Attendees")) {
-                
+                HStack {
+                    TextField("New Attendee" , text: $newAttendee)
+                    Button(action: {
+                        withAnimation {
+                            let attendee = DailyScrum.Attendee(name: newAttendee)
+                            data.attendee.append(attendee)
+                            newAttendee = ""
+                        }
+                    }) {
+                        Image(systemName: "plus.circle.fill")
+                    }
+                    .disabled(newAttendee.isEmpty)
+                }
+                ForEach(data.attendee) {attendee in
+                    Label(attendee.name, systemImage: "person")
+                }
             }
         }
     }

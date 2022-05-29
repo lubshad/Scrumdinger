@@ -45,4 +45,23 @@ extension DailyScrum {
         }
     }
     
+    
+    struct Data{
+        var title: String = ""
+        var attendee: [Attendee] = []
+        var lengthInMinutes : Double = 5
+        var theme: Theme = Theme.red
+    }
+    
+    var data : Data {
+        Data(
+            title: title,
+            attendee: attendees,
+            lengthInMinutes: Double(lengthInMinutes),
+            theme: theme
+        )
+    }
+    
+    
+    
 }
