@@ -22,7 +22,6 @@ struct CardView: View {
             }.font(.caption)
         }
         .padding()
-        .background(scrum.theme.mainColor)
     }
 }
 
