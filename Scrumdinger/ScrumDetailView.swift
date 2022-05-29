@@ -39,6 +39,11 @@ struct ScrumDetailView: View {
                 }
             }
             .navigationTitle(scrum.title)
+            .toolbar {
+                Button(action: {}){
+                    Text("Edit")
+                }
+            }
         }
     }
 }
