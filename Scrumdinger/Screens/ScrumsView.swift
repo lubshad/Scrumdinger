@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ScrumsView: View {
     
-    let scrums:[DailyScrum]
+    @Binding var scrums:[DailyScrum]
     
     var body: some View {
         NavigationView {
@@ -33,6 +33,6 @@ struct ScrumsView: View {
 
 struct ScrumsView_Previews: PreviewProvider {
     static var previews: some View {
-        ScrumsView(scrums: DailyScrum.sampleData)
+        ScrumsView(scrums: .constant(DailyScrum.sampleData))
     }
 }

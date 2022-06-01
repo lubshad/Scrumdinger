@@ -21,6 +21,7 @@ struct ScrumDetailEditView: View {
                     Spacer()
                     Text("\(Int(data.lengthInMinutes)) minutes")
                 }
+                ThemePicker(selectedTheme: $data.theme)
             }
             Section(header: Text("Attendees")) {
                 HStack {
@@ -38,6 +39,10 @@ struct ScrumDetailEditView: View {
                 }
                 ForEach(data.attendee) {attendee in
                     Label(attendee.name, systemImage: "person")
+                }
+                .onDelete{ indexSet in
+                    data.attendee.remove(atOffsets: indexSet)
+                    
                 }
             }
         }
