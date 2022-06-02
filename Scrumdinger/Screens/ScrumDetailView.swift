@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct ScrumDetailView: View {
-    let scrum : DailyScrum
+    @Binding var scrum : DailyScrum
     @State var showEditSheet:Bool = false
     var body: some View {
         List {
             Section(header: Text("Meeting info")) {
-                NavigationLink(destination: MeetingView()) {
+                NavigationLink(destination: MeetingView(scrum: $scrum)) {
                     Label("Start meeting" , systemImage: "timer")
                 }
                 HStack {
@@ -76,6 +76,6 @@ struct ScrumDetailView: View {
 
 struct ScrumDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ScrumDetailView(scrum : DailyScrum.sampleData[1])
+        ScrumDetailView(scrum :.constant(  DailyScrum.sampleData[0]))
     }
 }
