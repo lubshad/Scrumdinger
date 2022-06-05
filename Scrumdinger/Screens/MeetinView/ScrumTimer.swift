@@ -17,6 +17,8 @@ class ScrumTimer : ObservableObject {
     var speakers : [Speaker] = []
     
     
+    
+    
     func resetTimer(lenthInMinutes: Int , attendees: [DailyScrum.Attendee]) {
         self.lengthInMinutes = lenthInMinutes
         self.speakers = attendees.map{$0.speaker}
@@ -32,6 +34,10 @@ class ScrumTimer : ObservableObject {
     }
     
     func nextSpeaker() {
+        
+    }
+    
+    func changeSpeaker() {
         
     }
 }
