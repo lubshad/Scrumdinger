@@ -17,14 +17,7 @@ struct MeetingView: View {
             VStack{
                 MeetingHeaderView(secondsElapsed: scrumTimer.secondsElapsed, secondsRemaining: scrumTimer.secondsRemaining)
                 Circle().stroke(lineWidth: 20)
-                HStack {
-                    Text("Speaker 1 of 3")
-                    Spacer()
-                    Button(action : {}) {
-                        Image(systemName: "forward.fill")
-                    }
-                }
-                
+                MeetingFooterView(speakers: scrumTimer.speakers , skipAction: scrumTimer.nextSpeaker)
             }
             .padding()
             .navigationBarTitleDisplayMode(.inline)

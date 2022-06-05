@@ -65,3 +65,22 @@ extension DailyScrum {
     
     
 }
+
+
+struct Speaker {
+    var id : UUID
+    var isCompleted : Bool
+    var name: String
+    
+    init(id: UUID = UUID(), name: String, isCompleted: Bool = false) {
+        self.id = id
+        self.isCompleted = isCompleted
+        self.name = name
+    }
+}
+
+extension DailyScrum.Attendee {
+    var speaker: Speaker {
+        Speaker(name: self.name)
+    }
+}

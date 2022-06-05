@@ -22,6 +22,7 @@
 		348EB1C9284842F500B86D48 /* MeetingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348EB1C8284842F500B86D48 /* MeetingHeaderView.swift */; };
 		348EB1CD284846F200B86D48 /* ScrumProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348EB1CC284846F200B86D48 /* ScrumProgressView.swift */; };
 		348EB1CF284849E000B86D48 /* ScrumTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348EB1CE284849E000B86D48 /* ScrumTimer.swift */; };
+		348EB1D3284D018400B86D48 /* MeetingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348EB1D2284D018400B86D48 /* MeetingFooterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		348EB1C8284842F500B86D48 /* MeetingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingHeaderView.swift; sourceTree = "<group>"; };
 		348EB1CC284846F200B86D48 /* ScrumProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumProgressView.swift; sourceTree = "<group>"; };
 		348EB1CE284849E000B86D48 /* ScrumTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumTimer.swift; sourceTree = "<group>"; };
+		348EB1D2284D018400B86D48 /* MeetingFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingFooterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				348EB1C8284842F500B86D48 /* MeetingHeaderView.swift */,
+				348EB1D2284D018400B86D48 /* MeetingFooterView.swift */,
 				348EB1CC284846F200B86D48 /* ScrumProgressView.swift */,
 			);
 			path = Components;
@@ -213,6 +216,7 @@
 				348EB1B928436B5500B86D48 /* DailyScrum.swift in Sources */,
 				348EB1BD284377E400B86D48 /* ScrumsView.swift in Sources */,
 				348EB1C128438A2D00B86D48 /* ScrumDetailEditView.swift in Sources */,
+				348EB1D3284D018400B86D48 /* MeetingFooterView.swift in Sources */,
 				348EB1C72847066F00B86D48 /* ThemePicker.swift in Sources */,
 				348EB1BF28437EC400B86D48 /* ScrumDetailView.swift in Sources */,
 				348EB1A928432D6E00B86D48 /* MeetingView.swift in Sources */,
@@ -279,7 +283,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -333,7 +337,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
